@@ -1,24 +1,24 @@
 import { ProxyState } from "../AppState.js"
 import { housesService } from "../Services/housesService.js"
 
-  function _draw(){
-    let houses = ProxyState.houses
-    let template = ""
-    houses.forEach(house=> template += house.Template)
-    // console.log(template)
-    document.getElementById('houses').innerHTML = template
-    console.log(ProxyState.houses)
-  }
+function _draw() {
+  let houses = ProxyState.houses
+  let template = ""
+  houses.forEach(house => template += house.Template)
+  // console.log(template)
+  document.getElementById('houses').innerHTML = template
+  console.log(ProxyState.houses)
+}
 
-export default class housesController{
-  constructor(){
+export default class housesController {
+  constructor() {
     console.log("houses controller working")
     console.log(ProxyState.houses)
     _draw()
     ProxyState.on("houses", _draw)
   }
 
-  createHouse(event){
+  createHouse(event) {
     event.preventDefault();
     console.log('creating house')
     let form = event.target
@@ -35,12 +35,12 @@ export default class housesController{
     housesService.createHouse(rawHouse)
   }
 
-  bid(id){
+  bid(id) {
     console.log('bidding ' + id)
     housesService.bid(id)
   }
 
-  deleteHouse(id){
+  deleteHouse(id) {
     console.log(id)
     housesService.deleteHouse(id)
   }
