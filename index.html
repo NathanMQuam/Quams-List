@@ -9,7 +9,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/style/main.css">
-    <title>latewinter21-gregslist</title>
+    <title>Quam's-List</title>
 </head>
 
 <body>
@@ -17,10 +17,13 @@
         <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
             <a class="navbar-brand" href="#">
                 <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
-                <span class="ml-2">latewinter21-gregslist</span>
+                <span class="ml-2">Quam's-List</span>
             </a>
         </nav>
     </header>
+
+
+
     <main class="container-fluid">
         <div class="row">
             <div class="col">
@@ -61,13 +64,52 @@
         <div class="row" id="cars">
 
         </div>
+
         <hr>
+
         <div class="row">
             <div class="col">
                 <h1>Houses</h1>
+
+                <form class="form-inline" onsubmit="app.housesController.createHouse(event)">
+                    <div class="form-group">
+                        <input type="text" name="squareFeet" id="squareFeet" class="form-control" placeholder="Square Feet" aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="rooms" id="rooms" class="form-control" placeholder="Rooms" aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="address" id="address" class="form-control" placeholder="Address" aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="price" id="price" class="form-control" placeholder="Price" aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="description" id="description" class="form-control" placeholder="Description"
+                            aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="imgUrl" id="imgUrl" class="form-control" placeholder="ImgUrl"
+                            aria-describedby="helpId">
+                    </div>
+                    <button class="btn btn-info" type="submit">Create</button>
+                </form>
             </div>
         </div>
+        <div class="row" id="houses"></div>
+
+        <hr>
+
+        <div class="row" id="jobs">
+            <div class="col">
+                <h1>Jobs</h1>
+            </div>
+        </div>
+        <div class="row" id="jobs"></div>
     </main>
+
+
+    
     <footer class="container-fluid bg-dark text-light">
         <div class="row text-center">
             <div class="col">
